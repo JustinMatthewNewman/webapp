@@ -6,6 +6,7 @@ import { auth, handleUserProfile } from './firebase/utils';
 import Homepage from './pages/Homepage';
 import Registration from './pages/Registration';
 import Login from './pages/Login';
+import Recovery from './pages/Recovery';
 
 //layouts
 
@@ -13,6 +14,13 @@ import MainLayout from './layouts/MainLayouts';
 import HomepageLayout from './layouts/HomepageLayout';
 
 import './default.scss';
+
+
+// npm i node-sass
+// npm i react-router-dom@5.2.0
+// npm i firebase
+// npm i redux react-redux redux-logger
+
 
 const initialState = {
   currentUser: null
@@ -63,7 +71,7 @@ class App extends Component {
               <Homepage />
             </HomepageLayout>
           )} />
-          <Route path="/registration" render={() => (
+          <Route path="/registration" render={() => currentUser ? <Redirect to="/" /> : (
             <MainLayout currentUser = {currentUser} >
               <Registration />
             </MainLayout>
@@ -73,6 +81,11 @@ class App extends Component {
               <Login />
             </MainLayout>
           )} />
+          <Route path="/recovery" render={() => (
+              <MainLayout>
+                <Recovery />
+              </MainLayout>
+            )} />
         </Switch>
       </div>
     );
