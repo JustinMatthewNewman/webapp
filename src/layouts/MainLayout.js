@@ -2,14 +2,16 @@ import React from 'react';
 import Header from './../components/Header';
 import Footer from './../components/Footer';
 
-const HomepageLayout = props => {
+const MainLayout = props => {
   return (
-    <div className="fullHeight">
+    <div>
       <Header {...props} />
-      {props.children}
+      <div className="main">
+        {props.children}
+      </div>
       <Footer />
     </div>
   );
 };
 
-export default HomepageLayout;
+export default MainLayout;

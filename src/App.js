@@ -11,7 +11,7 @@ import WithAuth from './hoc/withAuth';
 import WithAdminAuth from './hoc/withAdminAuth';
 
 // layouts
-import MainLayout from './layouts/MainLayouts';
+import MainLayout from './layouts/MainLayout';
 import HomepageLayout from './layouts/HomepageLayout';
 import AdminLayout from './layouts/AdminLayout';
 import DashboardLayout from './layouts/DashboardLayout';
@@ -44,7 +44,12 @@ const App = props => {
           </HomepageLayout>
         )}
         />
-        <Route path="/search" render={() => (
+        <Route exact path="/search" render={() => (
+          <MainLayout>
+            <Search />
+          </MainLayout>
+        )} />
+        <Route path="/search/:filterType" render={() => (
           <MainLayout>
             <Search />
           </MainLayout>

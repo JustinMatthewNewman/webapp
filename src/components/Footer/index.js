@@ -5,7 +5,7 @@ const Footer = props => {
   return (
     <footer className="footer">
       <div className="wrap">
-        © Justin Newman 2022
+        © SimpleTut 2020
       </div>
     </footer>
   );
