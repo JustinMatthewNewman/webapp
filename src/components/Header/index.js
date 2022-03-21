@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {auth} from './../../firebase/utils'
 
+import Logo from './../../assets/logo.png';
+
 
 import './style.scss';
 
@@ -11,7 +13,9 @@ const Header = props => {
         <header className="header">
         <div className="wrap">
             <Link to="/">
-            <h1>E-Shop</h1>
+                <div className = "logo">
+                    <img src={Logo} alt="Logo"></img>
+                </div>
             </Link>
             <div className="callToActions">
                 {currentUser && (
@@ -34,10 +38,6 @@ const Header = props => {
                 </ul>
                 )}
             </div>
-
-
-
-
         </div>
 
         </header>
